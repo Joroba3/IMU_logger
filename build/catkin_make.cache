@@ -1,0 +1,2 @@
+.
+-DCATKIN_DEVEL_PREFIX=/home/jacobo/Documents/IMU_logger/devel -DCMAKE_INSTALL_PREFIX=/home/jacobo/Documents/IMU_logger/install -G Unix Makefiles

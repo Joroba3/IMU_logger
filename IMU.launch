@@ -1,0 +1,11 @@
+<!-- -*- xml -*- -->
+<launch>
+	<param name="filename" command="date +'%Y%m%d_%H%M'.bag"/>
+	<arg name="record_csv" default="true"/>
+
+	<node pkg="rosbag" type="record" name="rosbag_record"
+		args="record --all --O $(arg filename)"/>
+
+	<node pkg="sbg_driver" type="sbg_device" name="sbg_nodes"
+		args="$(find IMU_logger)/sbg_ellipseN.launch"/>
+</launch>
