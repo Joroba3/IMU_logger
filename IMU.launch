@@ -1,11 +1,8 @@
 <!-- -*- xml -*- -->
 <launch>
-	<param name="filename" command="date +'%Y%m%d_%H%M'.bag"/>
-	<arg name="record_csv" default="true"/>
+  <node name="logger" pkg="IMU_logger" type="logger.py"/>
 
-	<node pkg="rosbag" type="record" name="rosbag_record"
-		args="record --all --O $(arg filename)"/>
-
-	<node pkg="sbg_driver" type="sbg_device" name="sbg_nodes"
-		args="$(find IMU_logger)/sbg_ellipseN.launch"/>
+  <node name="sbg_ellipseN" pkg="sbg_driver" type="sbg_device" output="screen">
+  	<rosparam command="load" file="$(find sbg_driver)/config/example/ellipse_N_default.yaml" />
+  </node>
 </launch>

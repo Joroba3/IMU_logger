@@ -148,6 +148,10 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/IMU_logger" TYPE FILE FILES "/home/jacobo/Documents/IMU_logger/src/package.xml")
 endif()
 
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/IMU_logger" TYPE PROGRAM FILES "/home/jacobo/Documents/IMU_logger/build/catkin_generated/installspace/logger.py")
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/jacobo/Documents/IMU_logger/build/gtest/cmake_install.cmake")
