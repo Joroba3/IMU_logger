@@ -62,6 +62,7 @@ def euler_callback(data):
                                                          data.accuracy.x,
                                                          data.accuracy.y,
                                                          data.accuracy.z))
+    print(data.status)
 
 def listener():
     rospy.init_node('listener', anonymous=True)
